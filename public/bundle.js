@@ -24937,12 +24937,10 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            location: 'Miami',
-	            temp: 35
-	        };
+	            temp: 35 };
 	    },
 	    handleSearch: function handleSearch(location) {
 	        var that = this;
-
 	        openWeatherMap.getTemp(location).then(function (temp) {
 	            that.setState({
 	                location: location,
@@ -25060,9 +25058,7 @@
 
 	module.exports = {
 	    getTemp: function getTemp(location) {
-	        console.log('primero consol');
 	        var encodedLocation = encodeURIComponent(location);
-	        console.log('test1');
 	        var requestUrl = OPEN_WEATHER_MAP_URL + '&q=' + encodedLocation;
 
 	        return axios.get(requestUrl).then(function (res) {
