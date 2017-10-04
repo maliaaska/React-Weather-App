@@ -57,8 +57,8 @@
 
 	var Main = __webpack_require__(216);
 	var Weather = __webpack_require__(218);
-	var About = __webpack_require__(221);
-	var Examples = __webpack_require__(222);
+	var About = __webpack_require__(248);
+	var Examples = __webpack_require__(249);
 
 	ReactDOM.render(React.createElement(
 	    Router,
@@ -24935,8 +24935,7 @@
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            location: 'Miami',
-	            temp: 35
+	            isloading: false
 	        };
 	    },
 	    handleSearch: function handleSearch(location) {
@@ -25040,7 +25039,34 @@
 	module.exports = WeatherMessage;
 
 /***/ },
-/* 221 */
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25062,7 +25088,7 @@
 	module.exports = About;
 
 /***/ },
-/* 222 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
