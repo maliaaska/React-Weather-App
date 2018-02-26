@@ -1,8 +1,8 @@
-var React = require('react');
-var Nav = require('Nav');
+import React from 'react';
+import Nav from './Nav.js';
 
 
-var Main = (props) => {
+const Main = (props) => {
     return (
         <div>
             <Nav/>
@@ -12,4 +12,4 @@ var Main = (props) => {
         
     );
 }
-module.exports = Main;
+export default Main;

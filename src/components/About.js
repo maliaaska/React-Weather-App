@@ -1,10 +1,11 @@
-var React = require('react');
+import React from 'react';
 
-var About = (props) => {
+const About = (props) => {
     return (
         <h3>
             About Component
         </h3>
     )
 };
-module.exports = About;
+
+export default About;

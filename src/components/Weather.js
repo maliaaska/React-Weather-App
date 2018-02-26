@@ -1,10 +1,10 @@
-var React = require('react');
-var Form = require('Form');
-var WeatherMessage = require('WeatherMessage');
+import React from 'react';
+import Form from './Form.js';
+import WeatherMessage from './WeatherMessage';
 var openWeatherMap = require('openWeatherMap');
 
 
-var Weather = React.createClass({
+const Weather = React.createClass({
     getInitialState: function () {
         return {
             isLoading: false
@@ -46,7 +46,6 @@ var Weather = React.createClass({
             </h3>
             <Form onSearch={this.handleSearch}/>
             {renderMessage()}
-
         </div>
 
     );

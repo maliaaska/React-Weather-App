@@ -1,39 +1,32 @@
+
 const path = require('path');
 
 module.exports = (env) => {
-  return {
-    entry: './app/app.jsx',
+  const isProduction = env === "production";
+  
+ return {
+    entry: './src/app.js',
     output: {
-        path: __dirname,
-        filename: './public/bundle.js'
-    },
-    resolve: {
-        root: __dirname,
-        alias: {
-            Main: 'app/components/Main.jsx',
-            Nav: 'app/components/Nav.jsx',
-            Weather: 'app/components/Weather.jsx',
-            About: 'app/components/About.jsx',
-            Examples: 'app/components/Examples.jsx',
-            Form: 'app/components/Form.jsx',
-            WeatherMessage: 'app/components/WeatherMessage.jsx',
-            openWeatherMap: 'app/api/openWeatherMap.jsx'
-        },
-        extensions: ['', '.js', '.jsx']
+        path: path.join(__dirname, 'public'),
+        filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            {
-                loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015']
-                },
-                test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/
-            }
-        ]
-
+        rules: [{
+            loader: 'babel-loader',
+            test: /\.js$/,
+            exclude: /node_modules/
+        },{
+            test: /\.s?css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
+        }]
     },
-    devtool: 'cheap-module-eval-source-map'
-}
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    }
+  }
 };
