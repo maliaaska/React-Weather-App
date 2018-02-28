@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Form = React.createClass({
+const Form = React.createClass({
     onFormSubmit: function (e) {
         e.preventDefault();
 
@@ -23,4 +23,4 @@ var Form = React.createClass({
     }
 });
 
-module.exports = Form;
+export default Form;

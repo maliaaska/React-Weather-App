@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
 
- var Nav = () => {
+const Nav = () => {
     return (
         <div>
             <h1>Navigation Component</h1>
@@ -11,4 +11,4 @@ import {Link, IndexLink} from 'react-router';
         </div>
     );
  }
-module.exports = Nav;
+export default Nav;

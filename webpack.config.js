@@ -1,8 +1,9 @@
-
+process.traceDeprecation = true;
 const path = require('path');
 
 module.exports = (env) => {
   const isProduction = env === "production";
+  
   
  return {
     entry: './src/app.js',
@@ -13,8 +14,12 @@ module.exports = (env) => {
     module: {
         rules: [{
             loader: 'babel-loader',
-            test: /\.js$/,
-            exclude: /node_modules/
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            query: 
+            {
+              presets:['react', 'es2015', ]
+            }
         },{
             test: /\.s?css$/,
             use: [
