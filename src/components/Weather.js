@@ -3,9 +3,9 @@ import Form from './Form.js';
 import WeatherMessage from './WeatherMessage';
 import OpenWeatherMap from 'react-open-weather-map';
  
-// const props = { isLoading: true, temp: true, location:true }; // info: sample is the response object from the OpenWeatherMap's API
+const props = { isLoading: true, temp: true, location:true }; // info: sample is the response object from the OpenWeatherMap's API
  
-// <OpenWeatherMap {...props} />
+<OpenWeatherMap {...props} />
 
 console.log('test1');
 export default class Weather extends React.Component {
@@ -19,7 +19,8 @@ export default class Weather extends React.Component {
     this.state = {
       isLoading: false,
     };
-    this.handleSearch = this.handleSearch.bind(this)
+    this.handleSearch = this.handleSearch.bind(this);
+    // this.openWeatherMap = this.openWeatherMap.bind(this);
   }  
 
   handleSearch(location) {
@@ -28,13 +29,13 @@ export default class Weather extends React.Component {
       this.setState({isLoading: true});
       console.log('test3');
 
-      openWeatherMap.getTemp(location).then(function (temp) {
+      openWeatherMap.getTemp(location).then( (temp) => {
           that.setState({
               isLoading: false,
               location: location,
               temp: temp
           })
-      }.bind(this),
+      },
        function (errorMessage) { 
           this.setState({isLoading: false});
           alert(errorMessage);

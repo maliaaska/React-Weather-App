@@ -1,4 +1,5 @@
 process.traceDeprecation = true;
+process.noDeprecation = true
 const path = require('path');
 
 module.exports = (env) => {
@@ -16,7 +17,7 @@ module.exports = (env) => {
             loader: 'babel-loader',
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            query: 
+            options: 
             {
               presets:['react', 'es2015', ]
             }
